@@ -12,7 +12,7 @@ export interface TestUser {
   password: string;
 }
 
-export function generateTestUser(candidateEmail: string = 'nestor.rojas@gmail.com'): TestUser {
+export function generateTestUser(candidateEmail: string = process.env.CANDIDATE_EMAIL || 'nestor.rojas@gmail.com'): TestUser {
   const uniqueId = randomUUID().slice(0, 8);
   const [localPart, domain] = candidateEmail.split('@');
 
@@ -32,6 +32,3 @@ export function generateTestUser(candidateEmail: string = 'nestor.rojas@gmail.co
     password: `Test${uniqueId}!Aa1@`,
   };
 }
-
-
-console.log(generateTestUser());

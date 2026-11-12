@@ -12,7 +12,7 @@ test.describe('Autenticación de Usuarios', () => {
     // Precondición UI: crear el usuario y esperar redirección a login
     await registerPage.goto();
     await registerPage.registerUser(user);
-    await expect(page).toHaveURL('https://practicesoftwaretesting.com/auth/login');
+    await expect(page).toHaveURL('/auth/login');
 
     // 1. Iniciar sesión con el usuario recién creado
     await loginPage.login(user.email, user.password);

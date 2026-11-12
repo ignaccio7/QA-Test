@@ -14,7 +14,7 @@ export class HomePage {
   }
 
   async goto() {
-    await this.page.goto('https://practicesoftwaretesting.com/');
+    await this.page.goto('/');
     // Esperar a que las tarjetas iniciales hayan cargado antes de usar el buscador
     await expect(this.page.locator('[data-test="product-name"]').first()).toBeVisible();
   }

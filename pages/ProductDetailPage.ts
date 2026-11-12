@@ -46,6 +46,6 @@ export class ProductDetailPage {
 
   async goToCart() {
     await this.navCart.click();
-    await expect(this.page).toHaveURL('https://practicesoftwaretesting.com/checkout');
+    await expect(this.page).toHaveURL('/checkout');
   }
 }

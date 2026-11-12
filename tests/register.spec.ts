@@ -10,8 +10,8 @@ test('Escenario 1: Registro de usuario nuevo', async ({ page }) => {
   await registerPage.registerUser(newUser);
 
   // 3. Validar que el registro fue exitoso (redirección a login)
-  // await expect(page).toHaveURL('https://practicesoftwaretesting.com/auth/login');
+  await expect(page).toHaveURL('/auth/login');
 
   // Url que no existe para probar los screens y la traza al fallar la prueba
-  await expect(page).toHaveURL('https://practicesoftwaretesting.com/auth/algoaquiquenoexiste');
+  // await expect(page).toHaveURL('https://practicesoftwaretesting.com/auth/algoaquiquenoexiste');
 });

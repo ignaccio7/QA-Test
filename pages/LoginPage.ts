@@ -18,7 +18,7 @@ export class LoginPage {
   }
 
   async goto() {
-    await this.page.goto('https://practicesoftwaretesting.com/auth/login');
+    await this.page.goto('/auth/login');
   }
 
   async login(email: string, password: string) {
@@ -41,6 +41,6 @@ export class LoginPage {
   async expectLoginError() {
     await expect(this.loginError).toBeVisible();
     await expect(this.loginError).toHaveText('Invalid email or password');
-    await expect(this.page).toHaveURL('https://practicesoftwaretesting.com/auth/login');
+    await expect(this.page).toHaveURL('/auth/login');
   }
 }
