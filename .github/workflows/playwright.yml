@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ master ]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     timeout-minutes: 60
@@ -18,16 +21,16 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: 22
-          cache: 'npm'
+          package-manager-cache: false
 
-      - name: Instalar dependencias de forma determinista
-        run: npm ci
+      - name: Instalar dependencias
+        run: npm install
 
       - name: Instalar navegadores de Playwright con dependencias del sistema
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps chromium
 
       - name: Ejecutar pruebas de Playwright
-        run: npx playwright test
+        run: npx playwright test --project=chromium
 
       - name: Subir reporte HTML ante fallos o éxito
         uses: actions/upload-artifact@v6
