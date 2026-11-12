@@ -65,7 +65,11 @@ export class RegisterPage {
     await this.emailInput.fill(user.email);
     await this.passwordInput.fill(user.password);
 
-    // 4. Enviar registro
+    // 4. Enviar registro y esperar confirmación de red
+    const registerResponsePromise = this.page.waitForResponse(
+      (res) => res.url().includes('/users/register')
+    );
     await this.submitButton.click();
+    await registerResponsePromise;
   }
 }

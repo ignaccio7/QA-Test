@@ -4,7 +4,7 @@ Proyecto de automatización de pruebas end-to-end (E2E) con **Playwright** y **T
 
 ## 📹 Video Explicativo
 - **Enlace del video:** 
-
+https://drive.google.com/drive/folders/1LyVr-KPy4Z-rrXlbagJDwspAfee0eu5k?usp=sharing
 ---
 
 ## 🛠️ Requisitos Previos
@@ -17,7 +17,7 @@ Proyecto de automatización de pruebas end-to-end (E2E) con **Playwright** y **T
 
 1. Clonar el repositorio:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/ignaccio7/QA-Test
    cd qa-automation
    ```
 

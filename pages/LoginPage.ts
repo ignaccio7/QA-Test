@@ -22,6 +22,7 @@ export class LoginPage {
   }
 
   async login(email: string, password: string) {
+    await expect(this.emailInput).toBeVisible();
     await this.emailInput.fill(email);
     await this.passwordInput.fill(password);
 

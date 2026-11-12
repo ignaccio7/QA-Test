@@ -15,11 +15,12 @@ test.describe('Autenticación de Usuarios', () => {
     await expect(page).toHaveURL('/auth/login');
 
     // 1. Iniciar sesión con el usuario recién creado
+    await loginPage.goto();
     await loginPage.login(user.email, user.password);
 
     // 2. Validar que la sesión quedó iniciada (nombre en esquina superior derecha)
     await loginPage.expectLoggedInUser(user.firstName, user.lastName);
-  });
+  }); 
 
   test('Escenario 4 (caso negativo): Login inválido', async ({ page }) => {
     const loginPage = new LoginPage(page);
